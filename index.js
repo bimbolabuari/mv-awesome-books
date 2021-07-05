@@ -1,20 +1,19 @@
-
 function Book(title, author) {
     this.title = title,
     this.author = author
 }
 
+function generateId() {
+    return (Math.random() + 1).toString(36).substring(7);
+  }
+
 const firstBook = new Book('Crime', 'Dostoyevsky')
 const secondBook = new Book('The Devil', 'Bulgakov')
 
-let bookArray = [
-    firstBook,
-    secondBook
-];
+let bookArray = [firstBook, secondBook];
 
 const bookCollection = document.querySelector('#collection')
 const createBook = document.querySelector('#createBook')
-// let newBook;
 
 function createBookElement(book) {
     const bookContainer = document.createElement('div');
@@ -37,22 +36,17 @@ bookArray.forEach(book => {
 
 const titleValue = document.querySelector('#title')
 const authorValue = document.querySelector('#author')
-const button = document.querySelector('#bookSubmit')
+const form = document.querySelector('#form')
 
-function addBookToLibrary() {
-  const title = titleValue.value;
-  const author = authorValue.value;
-  const newBookObject = {
-      title: title,
-      author: author
-  }
-  console.log(newBookObject)
+function addBookToLibrary(event) {
+    event.preventDefault();
+  const titleBook = titleValue.value;
+  const authorBook = authorValue.value;
+  const newBookObject = new Book(titleBook, authorBook)
+  bookArray.push(newBookObject);
+  displayBook(newBookObject, bookCollection)
 }
 
-button.addEventListener('click', addBookToLibrary());
+form.addEventListener('submit', addBookToLibrary);
 
-
-// function renderLibrary() {
-//     for(let i = 0; i <)
-// newBook = new Book(titleValue, authorValue)
-// addBookToLibrary(newBook);
+addBookToLibrary();
