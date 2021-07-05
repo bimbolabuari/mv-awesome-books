@@ -1,12 +1,15 @@
+
+function Book(title, author) {
+    this.title = title,
+    this.author = author
+}
+
+const firstBook = new Book('Crime', 'Dostoyevsky')
+const secondBook = new Book('The Devil', 'Bulgakov')
+
 let bookArray = [
-     firstBook = {
-        title: this.title,
-        author:  this.author
-    },
-     secondBook = {
-        title:  this.title,
-        author: this.author
-    }
+    firstBook,
+    secondBook
 ];
 
 const bookCollection = document.querySelector('#collection')
@@ -23,18 +26,31 @@ function createBookElement(book) {
     return bookContainer;
 }
 
-function displayBook(array, bookCollection) {
+function displayBook(book, bookCollection) {
  const newBookElement = createBookElement(book);
   bookCollection.appendChild(newBookElement);
 }
 
-bookArray.forEach(array => {
-    displayBook(array, bookCollection);
+bookArray.forEach(book => {
+    displayBook(book, bookCollection);
 })
 
-function addBookToLibrary(book) {
-    bookArray.push(book);
-};
+const titleValue = document.querySelector('#title')
+const authorValue = document.querySelector('#author')
+const button = document.querySelector('#bookSubmit')
+
+function addBookToLibrary() {
+  const title = titleValue.value;
+  const author = authorValue.value;
+  const newBookObject = {
+      title: title,
+      author: author
+  }
+  console.log(newBookObject)
+}
+
+button.addEventListener('click', addBookToLibrary());
+
 
 // function renderLibrary() {
 //     for(let i = 0; i <)
