@@ -42,8 +42,10 @@ const addBookToLibrary = (event) => {
   const titleBook = titleValue.value;
   const authorBook = authorValue.value;
   const newBookObject = new Book(titleBook, authorBook);
+  localStorage.setItem('newBookObject', JSON.stringify(newBookObject));
   bookArray.push(newBookObject);
   displayBook(newBookObject, bookCollection);
+  form.reset();
 };
 
 form.addEventListener('submit', addBookToLibrary);

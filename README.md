@@ -1,9 +1,7 @@
-# HTML-CAPSTONE-PROJECT
+# AWESOME-JS-OBJECT
 
 > This project is a Microverse exercise on Javascript DOM manipulation, event listener, arrow function, let and const, Javascript Object, Arrays, String interpolation, local storage.
 
-
-![screenshot]()
 
 ## Built With
 
@@ -11,10 +9,6 @@
 - JavaScript
 - Github workflow
 - Linters(Lighthouse, stylelint, Webhint, eslint)
-
-## Live Preview
-
-[Github deploy Page]()
 
 ## Author
 
