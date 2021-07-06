@@ -1,9 +1,11 @@
 const generateId = () => (Math.random() + 1).toString(36).substring(7);
 
-function Book(title, author) {
+class Book {
+  constructor(title, author) {
   this.title = title;
   this.author = author;
   this.id = generateId();
+  }
 }
 
 const firstBook = new Book('Crime', 'Dostoyevsky');
