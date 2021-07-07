@@ -1,6 +1,6 @@
 # AWESOME-JS-OBJECT
 
-> This project is a Microverse exercise on Javascript DOM manipulation, event listener, arrow function, let and const, Javascript Object, Arrays, String interpolation, local storage.
+> This project is a Microverse exercise on Javascript DOM manipulation, event listener, arrow function, let and const, Javascript Classes, Arrays, String interpolation, local storage.
 
 
 ## Built With
@@ -10,13 +10,18 @@
 - Github workflow
 - Linters(Lighthouse, stylelint, Webhint, eslint)
 
-## Author
+## Authors
 
 👤 **Abimbola Aminat Buari**
 
 - GitHub: [bimbolabuari](https://github.com/bimbolabuari)
 - Twitter: [bimbolabuari](https://twitter.com/bimbolabuari)
 - LinkedIn: [bimbolabuari](https://linkedin.com/in/bimbolabuari)
+
+👤 **German Cobian**
+* GitHub: [@German Cobian](https://github.com/German-Cobian)
+* Twitter: [@GermanCobian1](https://twitter.com/GermanCobian1)
+* LinkedIn: [@German Cobian](https://www.linkedin.com/in/german-cobian/)
 
 ## 🤝 Contributing
 

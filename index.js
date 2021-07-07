@@ -1,12 +1,60 @@
+const titleValue = document.querySelector('#title');
+const authorValue = document.querySelector('#author');
+const form = document.querySelector('#form');
+
 const generateId = () => (Math.random() + 1).toString(36).substring(7);
 
 class Book {
   constructor(title, author) {
     this.title = title;
     this.author = author;
+    this.titleValue = titleValue;
     this.id = generateId();
   }
 }
+
+class Archive {
+  static obtainBooks() {
+    let booksArray;
+    if(localStorage.getItem('booksArray') === null) {
+      booksArray = [];
+    } else {
+      booksArray = JSON.parse(localStorage.getItem('booksArray'))
+    }
+    return booksArray;
+  }
+
+  static addBook(book) {
+    const booksArray = Archive.obtainBooks();
+    booksArray.push(book)
+    localStorage.setItem('booksArray', JSON.stringify(booksArray));
+  }
+
+  static removeBook(id) {
+    const booksArray = Archive.obtainBooks();
+
+    booksArray.forEach((book, index) => {
+      if(book.id === id) {
+        booksArray.splice(index, 1)
+      }
+    });
+  localStorage.setItem('booksArray', JSON.stringify(booksArray));
+  }
+}
+
+class Showbook {
+
+}
+
+  addBookToLibrary(event) {
+    event.preventDefault();
+    const titleBook = titleValue.value;
+    const authorBook = authorValue.value;
+    const newBookObject = new Book(titleBook, authorBook);
+    localStorage.setItem('newBookObject', JSON.stringify(newBookObject));
+    bookArray.push(newBookObject);
+    displayBook(newBookObject, bookCollection);
+    form.reset();
 
 const firstBook = new Book('Crime', 'Dostoyevsky');
 const secondBook = new Book('The Devil', 'Bulgakov');
@@ -35,20 +83,18 @@ bookArray.forEach((book) => {
   displayBook(book, bookCollection);
 });
 
-const titleValue = document.querySelector('#title');
-const authorValue = document.querySelector('#author');
-const form = document.querySelector('#form');
 
-const addBookToLibrary = (event) => {
-  event.preventDefault();
-  const titleBook = titleValue.value;
-  const authorBook = authorValue.value;
-  const newBookObject = new Book(titleBook, authorBook);
-  localStorage.setItem('newBookObject', JSON.stringify(newBookObject));
-  bookArray.push(newBookObject);
-  displayBook(newBookObject, bookCollection);
-  form.reset();
-};
+
+// const addBookToLibrary = (event) => {
+//   event.preventDefault();
+//   const titleBook = titleValue.value;
+//   const authorBook = authorValue.value;
+//   const newBookObject = new Book(titleBook, authorBook);
+//   localStorage.setItem('newBookObject', JSON.stringify(newBookObject));
+//   bookArray.push(newBookObject);
+//   displayBook(newBookObject, bookCollection);
+//   form.reset();
+// };
 
 form.addEventListener('submit', addBookToLibrary);
 
