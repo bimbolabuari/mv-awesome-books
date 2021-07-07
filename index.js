@@ -39,7 +39,9 @@ class Archive {
 class ShowBooks {
   static renderBooks() {
     const booksArray = Archive.obtainBooks();
-    booksArray.forEach((book) => ShowBooks.createBookElement(book));
+    booksArray.forEach((book) => {
+      ShowBooks.createBookElement(book)
+    });
   }
 
   static createBookElement(book) {
@@ -48,16 +50,18 @@ class ShowBooks {
     bookItem.classList.add("book-item")
     bookItem.id = `${book.id}`;
     bookItem.innerHTML = `
-      <p class="">${book.title}</p>
-      <p class="">${book.author}</p>
-      <button class=""><a href="#" class="delete">Remove</a></button>
+    <div class="flex">
+      <p class="">"${book.title}"<span class="ml-3">by</span></p>
+      <p class="ml-3">${book.author}</p>
+      </div>
+      <button class="pl-4 pr-4"><a href="#" class="delete">Remove</a></button>
     `;
     list.appendChild(bookItem);
   }
 
   static deleteBook(element) {
     if (element.classList.contains('delete')) {
-      element.parentElement.remove();
+      element.parentElement.parentElement.remove();
     }
   }
 
