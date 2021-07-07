@@ -1,6 +1,4 @@
 // eslint-disable-next-line max-classes-per-file
-
-
 class Book {
   constructor(title, author) {
     this.title = title;
@@ -63,8 +61,8 @@ class ShowBooks {
   }
 
   static clearFields() {
-    const title = document.querySelector('#title').value = '';
-    const author = document.querySelector('#author').value = '';
+    document.querySelector('#title').value = '';
+    document.querySelector('#author').value = '';
   }
 }
 
@@ -79,7 +77,6 @@ document.querySelector('#book-form').addEventListener('submit', (e) => {
 
   ShowBooks.createBookElement(book);
   Archive.addBook(book);
-
   ShowBooks.clearFields();
 });
 
