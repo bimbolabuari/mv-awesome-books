@@ -45,6 +45,7 @@ class ShowBooks {
   static createBookElement(book) {
     const list = document.querySelector('#book-collection');
     const bookItem = document.createElement('div');
+    bookItem.classList.add()
     bookItem.id = `${book.id}`;
     bookItem.innerHTML = `
       <p>${book.title}</p>
