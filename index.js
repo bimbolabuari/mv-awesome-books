@@ -47,14 +47,14 @@ class ShowBooks {
   static createBookElement(book) {
     const list = document.querySelector('#book-collection');
     const bookItem = document.createElement('li');
-    bookItem.classList.add("book-item")
+    bookItem.classList.add("book-item", "alternate")
     bookItem.id = `${book.id}`;
     bookItem.innerHTML = `
     <div class="flex">
-      <p class="">"${book.title}"<span class="ml-3">by</span></p>
-      <p class="ml-3">${book.author}</p>
-      </div>
-      <button class="pl-4 pr-4"><a href="#" class="delete">Remove</a></button>
+      <p class="pt-3">"${book.title}"<span class="ml-3">by</span></p>
+      <p class="pt-3 ml-3">${book.author}</p>
+    </div>
+    <button class="pl-4 pr-4"><a href="#" class="delete">Remove</a></button>
     `;
     list.appendChild(bookItem);
   }

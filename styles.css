@@ -6,12 +6,15 @@
     text-decoration: none;
 }
 
+#book-collection {
+    width: 98%;
+}
+
 .book-item {
     display: flex;
     width: 100%;
     justify-content: space-between;
     padding: 0 20px;
-    margin-bottom: 10px;
     align-items: center;
 }
 
@@ -20,3 +23,11 @@
     width: 40%;
 
 }
+
+.alternate:nth-child(odd) {  
+    background: rgb(179, 175, 175);  
+}  
+ 
+.alternate:nth-child(even) {  
+    background: white;  
+} 
