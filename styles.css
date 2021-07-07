@@ -5,3 +5,11 @@
     list-style-type: none;
     text-decoration: none;
 }
+
+.book-item {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 0 20px;
+    margin-bottom: 10px;
+}

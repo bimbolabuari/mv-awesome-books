@@ -44,20 +44,20 @@ class ShowBooks {
 
   static createBookElement(book) {
     const list = document.querySelector('#book-collection');
-    const bookItem = document.createElement('div');
-    bookItem.classList.add()
+    const bookItem = document.createElement('li');
+    bookItem.classList.add("book-item")
     bookItem.id = `${book.id}`;
     bookItem.innerHTML = `
-      <p>${book.title}</p>
-      <p>${book.author}</p>
-      <button><a href="#" class="delete">Remove</a></button>
+      <p class="">${book.title}</p>
+      <p class="">${book.author}</p>
+      <button class=""><a href="#" class="delete">Remove</a></button>
     `;
     list.appendChild(bookItem);
   }
 
   static deleteBook(element) {
     if (element.classList.contains('delete')) {
-      element.parentElement.parentElement.remove();
+      element.parentElement.remove();
     }
   }
 
