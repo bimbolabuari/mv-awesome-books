@@ -61,6 +61,11 @@ class ShowBooks {
       element.parentElement.parentElement.remove();
     }
   }
+
+  static clearFields() {
+    const title = document.querySelector('#title').value = '';
+    const author = document.querySelector('#author').value = '';
+  }
 }
 
 document.addEventListener('DOMContentLoaded', Archive.renderBooks);
@@ -74,6 +79,8 @@ document.querySelector('#book-form').addEventListener('submit', (e) => {
 
   ShowBooks.createBookElement(book);
   Archive.addBook(book);
+
+  ShowBooks.clearFields();
 });
 
 document.querySelector('#book-collection').addEventListener('click', (e) => {
