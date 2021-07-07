@@ -42,11 +42,47 @@ class Archive {
   }
 }
 
-class Showbook {
+class ShowBooks {
+
+  static renderBooks() {
+    const booksArray = Archive.obtainBooks();
+    booksArray.forEach((book) => ShowBooks.createBookElement(book));
+  }
+
+  static createBookElement(book) {
+    const list = document.querySelector('#book-collection');
+    const bookItem = document.createElement('li');
+
+    bookItem.innerHTML = `
+      <p>${book.title}</p>
+      <p>${book.author}</p>
+      <p>${book.id}</p>
+      <p><a href="#" class="delete">Remove</a></p>
+    `;
+    list.appendChild(bookItem)
+  }
 
 }
 
-  addBookToLibrary(event) {
+document.addEventListener('DOMContentLoaded', Archive.renderBooks);
+
+document.querySelector('#book-form').addEventListener('submit', (e) => { 
+  e.preventDefault();
+  const title = document.querySelector('#title').value
+  const author =document.querySelector('#author').value
+  const id = document.querySelector('#id').value
+
+  const book = new Book(title, author, id);
+  
+  Archive.createBookElement(book);
+  Archive.addBook(book);
+
+});
+ 
+
+
+
+addBookToLibrary(event) {
     event.preventDefault();
     const titleBook = titleValue.value;
     const authorBook = authorValue.value;
