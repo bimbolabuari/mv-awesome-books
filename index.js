@@ -40,14 +40,14 @@ class ShowBooks {
   static renderBooks() {
     const booksArray = Archive.obtainBooks();
     booksArray.forEach((book) => {
-      ShowBooks.createBookElement(book)
+      ShowBooks.createBookElement(book);
     });
   }
 
   static createBookElement(book) {
     const list = document.querySelector('#book-collection');
     const bookItem = document.createElement('li');
-    bookItem.classList.add("book-item", "alternate")
+    bookItem.classList.add('book-item', 'alternate');
     bookItem.id = `${book.id}`;
     bookItem.innerHTML = `
     <div class="flex">
