@@ -3,7 +3,7 @@ class Book {
   constructor(title, author) {
     this.title = title;
     this.author = author;
-    this.id = (Math.random() + 1).toString(36).substring(7);
+    this.id = id;
   }
 }
 
@@ -65,6 +65,7 @@ class ShowBooks {
   static clearFields() {
     document.querySelector('#title').value = '';
     document.querySelector('#author').value = '';
+    const id = document.querySelector('#id').value = '';
   }
 }
 
