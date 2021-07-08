@@ -30,3 +30,25 @@
 .alternate:nth-child(even) {
   background: white;
 }
+
+.hide {
+  display: none;
+}
+
+.header {
+  height: 8vh;
+  background-color: aquamarine;
+}
+
+.footer {
+  height: 8vh;
+  position: fixed;
+  bottom: 0;
+  background-color: aquamarine;
+  width: 100%;
+}
+
+.height {
+  height: 84vh;
+  margin-top: 3em;
+}
