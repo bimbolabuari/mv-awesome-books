@@ -3,12 +3,18 @@
 > This project is a Microverse exercise on Javascript DOM manipulation, event listener, arrow function, let and const, Javascript Classes, Arrays, String interpolation, local storage.
 
 
+## Live demo link
+
+https://bimbolabuari.github.io/mv-awesome-books/
+
+
 ## Built With
 
 - Semantic HTML
 - JavaScript
 - Github workflow
 - Linters(Lighthouse, stylelint, Webhint, eslint)
+
 
 ## Authors
 
