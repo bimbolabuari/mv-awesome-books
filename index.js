@@ -1,9 +1,9 @@
 // eslint-disable-next-line max-classes-per-file
 class Book {
-  constructor(title, author) {
+  constructor(title, author, id) {
     this.title = title;
     this.author = author;
-    this.id = (Math.random() + 1).toString(36).substring(7);
+    this.id = id;
   }
 }
 
@@ -24,32 +24,34 @@ class Archive {
     localStorage.setItem('booksArray', JSON.stringify(booksArray));
   }
 
-  static removeBook(id) {
+  static removeBook() {
     const booksArray = Archive.obtainBooks();
-
     booksArray.forEach((book, index) => {
-      if (book.id === id) {
-        booksArray.splice(index, 1);
-      }
+      booksArray.splice(index, 1);
+      localStorage.setItem('booksArray', JSON.stringify(booksArray));
     });
-    localStorage.setItem('booksArray', JSON.stringify(booksArray));
   }
 }
 
 class ShowBooks {
   static renderBooks() {
     const booksArray = Archive.obtainBooks();
-    booksArray.forEach((book) => ShowBooks.createBookElement(book));
+    booksArray.forEach((book) => {
+      ShowBooks.createBookElement(book);
+    });
   }
 
   static createBookElement(book) {
     const list = document.querySelector('#book-collection');
-    const bookItem = document.createElement('div');
+    const bookItem = document.createElement('li');
+    bookItem.classList.add('book-item', 'alternate');
     bookItem.id = `${book.id}`;
     bookItem.innerHTML = `
-      <p>${book.title}</p>
-      <p>${book.author}</p>
-      <button><a href="#" class="delete">Remove</a></button>
+    <div class="flex">
+      <p class="pt-3">"${book.title}"<span class="ml-3">by</span></p>
+      <p class="pt-3 ml-3">${book.author}</p>
+    </div>
+    <button class="pl-4 pr-4"><a href="#" class="delete">Remove</a></button>
     `;
     list.appendChild(bookItem);
   }
@@ -63,10 +65,11 @@ class ShowBooks {
   static clearFields() {
     document.querySelector('#title').value = '';
     document.querySelector('#author').value = '';
+    document.querySelector('#id').value = '';
   }
 }
 
-document.addEventListener('DOMContentLoaded', Archive.renderBooks);
+document.addEventListener('DOMContentLoaded', ShowBooks.renderBooks);
 
 document.querySelector('#book-form').addEventListener('submit', (e) => {
   e.preventDefault();
