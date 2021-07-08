@@ -114,3 +114,11 @@ navAddNew.addEventListener('click', () => {
     AddNewSection.classList.add('hide');
     contactSection.classList.remove('hide');
     });
+
+
+let today = document.querySelector('#date-time')
+today.innerHTML = new Date().getMonth();
+
+//dateTime = luxon.DateTime;
+//const now = DateTime.now();
+//console.log(now, dateTime)
