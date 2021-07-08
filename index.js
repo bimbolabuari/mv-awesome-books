@@ -24,15 +24,13 @@ class Archive {
     localStorage.setItem('booksArray', JSON.stringify(booksArray));
   }
 
-  static removeBook(id) {
+  static removeBook() {
     const booksArray = Archive.obtainBooks();
-
     booksArray.forEach((book, index) => {
-      if (book.id === id) {
         booksArray.splice(index, 1);
-      }
+        localStorage.setItem('booksArray', JSON.stringify(booksArray));
     });
-    localStorage.setItem('booksArray', JSON.stringify(booksArray));
+  
   }
 }
 
@@ -71,7 +69,7 @@ class ShowBooks {
   }
 }
 
-document.addEventListener('DOMContentLoaded', Archive.renderBooks);
+document.addEventListener('DOMContentLoaded', ShowBooks.renderBooks);
 
 document.querySelector('#book-form').addEventListener('submit', (e) => {
   e.preventDefault();
@@ -87,5 +85,5 @@ document.querySelector('#book-form').addEventListener('submit', (e) => {
 
 document.querySelector('#book-collection').addEventListener('click', (e) => {
   ShowBooks.deleteBook(e.target);
-  Archive.removeBook(e.target.parentElement.previousElementSibling.textContent);
+  console.log(Archive.removeBook());
 });
