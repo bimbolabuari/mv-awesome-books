@@ -1,6 +1,6 @@
 // eslint-disable-next-line max-classes-per-file
 class Book {
-  constructor(title, author) {
+  constructor(title, author, id) {
     this.title = title;
     this.author = author;
     this.id = id;
