@@ -65,7 +65,7 @@ class ShowBooks {
   static clearFields() {
     document.querySelector('#title').value = '';
     document.querySelector('#author').value = '';
-    const id = document.querySelector('#id').value = '';
+    document.querySelector('#id').value = '';
   }
 }
 
@@ -85,5 +85,5 @@ document.querySelector('#book-form').addEventListener('submit', (e) => {
 
 document.querySelector('#book-collection').addEventListener('click', (e) => {
   ShowBooks.deleteBook(e.target);
-  console.log(Archive.removeBook());
+  Archive.removeBook(e.target.parentElement.previousElementSibling.textContent);
 });
