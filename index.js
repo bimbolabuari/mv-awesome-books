@@ -88,37 +88,31 @@ document.querySelector('#book-collection').addEventListener('click', (e) => {
   Archive.removeBook(e.target.parentElement.previousElementSibling.textContent);
 });
 
+const navList = document.querySelector('.list');
+const navAddNew = document.querySelector('.add-new');
+const navContact = document.querySelector('.contact');
 
-const navList = document.querySelector('.list')
-const navAddNew = document.querySelector('.add-new')
-const navContact = document.querySelector('.contact')
-
-const listSection = document.querySelector('#list')
-const AddNewSection = document.querySelector('#add-new')
-const contactSection = document.querySelector('#contact')
+const listSection = document.querySelector('#list');
+const AddNewSection = document.querySelector('#add-new');
+const contactSection = document.querySelector('#contact');
 
 navList.addEventListener('click', () => {
-listSection.classList.remove('hide');
-AddNewSection.classList.add('hide');
-contactSection.classList.add('hide');
+  listSection.classList.remove('hide');
+  AddNewSection.classList.add('hide');
+  contactSection.classList.add('hide');
 });
 
 navAddNew.addEventListener('click', () => {
   listSection.classList.add('hide');
   AddNewSection.classList.remove('hide');
   contactSection.classList.add('hide');
-  });
+});
 
-  navContact.addEventListener('click', () => {
-    listSection.classList.add('hide');
-    AddNewSection.classList.add('hide');
-    contactSection.classList.remove('hide');
-    });
+navContact.addEventListener('click', () => {
+  listSection.classList.add('hide');
+  AddNewSection.classList.add('hide');
+  contactSection.classList.remove('hide');
+});
 
-
-let today = document.querySelector('#date-time')
-today.innerHTML = new Date().getMonth();
-
-//dateTime = luxon.DateTime;
-//const now = DateTime.now();
-//console.log(now, dateTime)
+const today = document.querySelector('#date-time');
+today.innerHTML = new Date();
