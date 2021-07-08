@@ -27,10 +27,9 @@ class Archive {
   static removeBook() {
     const booksArray = Archive.obtainBooks();
     booksArray.forEach((book, index) => {
-        booksArray.splice(index, 1);
-        localStorage.setItem('booksArray', JSON.stringify(booksArray));
+      booksArray.splice(index, 1);
+      localStorage.setItem('booksArray', JSON.stringify(booksArray));
     });
-  
   }
 }
 
