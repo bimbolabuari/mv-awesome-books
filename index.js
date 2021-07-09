@@ -114,6 +114,3 @@ navContact.addEventListener('click', () => {
   AddNewSection.classList.add('hide');
   contactSection.classList.remove('hide');
 });
-
-const today = document.querySelector('#date-time');
-today.innerHTML = new Date();
