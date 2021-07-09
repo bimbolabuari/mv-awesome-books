@@ -96,6 +96,7 @@ const listSection = document.querySelector('#list');
 const AddNewSection = document.querySelector('#add-new');
 const contactSection = document.querySelector('#contact');
 
+listSection.classList.remove('hide');
 navList.addEventListener('click', () => {
   listSection.classList.remove('hide');
   AddNewSection.classList.add('hide');

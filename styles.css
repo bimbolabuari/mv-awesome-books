@@ -36,7 +36,7 @@
 
 .header {
   height: 8vh;
-  background-color: aquamarine;
+ 
 }
 
 .footer {
@@ -50,4 +50,8 @@
 .height {
   height: 80vh;
   margin-top: 3em;
+}
+
+.text-white {
+  color: white;
 }
