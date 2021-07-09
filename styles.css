@@ -2,7 +2,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  list-style-type: none;
   text-decoration: none;
 }
 
@@ -29,4 +28,29 @@
 
 .alternate:nth-child(even) {
   background: white;
+}
+
+.hide {
+  display: none;
+}
+
+.header {
+  height: 8vh;
+}
+
+.footer {
+  height: 8vh;
+  position: fixed;
+  bottom: 0;
+  background-color: aquamarine;
+  width: 100%;
+}
+
+.height {
+  height: 80vh;
+  margin-top: 3em;
+}
+
+.text-white {
+  color: white;
 }

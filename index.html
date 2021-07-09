@@ -8,25 +8,90 @@
     <link rel="stylesheet" href="styles.css">
   </head>
     <body>
-        <h1 class="text-center text-primary pt-5 pb-3">All awesome books</h1>
-        <section id="collection" class="d-flex justify-content-center m-auto w-100">
+      <header class="header">
+        <nav class="d-flex flex-row justify-content-between border-bottom h-100 pr-5 pl-5 align-items-center bg-dark">
+          <div>
+            <p class="text-white pt-3">All awesome books</p>
+          </div>
+
+          <div class="d-flex justify-content-around w-50">
+            <a href="#list" class="list text-white">List</a>
+            <a href="#add-new" class="add-new text-white">Add new</a>
+            <a href="#contact" class="contact text-white">Contact</a>
+          </div>
+        </nav>
+      </header>
+      <div class="d-flex flex-row justify-content-end">
+        <div id="date-time" class="pr-3"></div>
+      </div>
+
+      <div id="list" class="hide height">
+      <section>
+      <h1 class="text-center text-primary pt-5 pb-3">All awesome books</h1>
+        <div id="collection" class="d-flex justify-content-center m-auto w-100">      
           <ul id= 'book-collection' class="d-flex flex-column border border-5 border-primary"></ul>
+        </div>
         </section>
+        </div>
+
+        <div id="add-new" class="hide height">
         <div class="d-flex justify-content-center w-50 m-auto">
         <section id="createBook" class="w-100">
-          <div class="text-center">___________________________</div>
-          <h2 class="text-center text-primary pt-3">Add a new book</h2>
+          <h2 class="text-center text-primary mt-5 mb-4">Add a new book</h2>
            <form id="book-form">
-               <input type="text" placeholder="Title" class="w-100 mt-2 pl-1" id="title" name="title" required><br>
-               <input type="text" placeholder="Author" class="w-100 mt-2 pl-1" id="author" name="author" required><br>
-               <input type="text" placeholder="id-number" class="w-100 mt-2 pl-1" id="id" name="id" required><br>
+               <input type="text" placeholder="Title" class="w-100 mt-3 pl-1" id="title" name="title" required><br>
+               <input type="text" placeholder="Author" class="w-100 mt-3 pl-1" id="author" name="author" required><br>
+               <input type="text" placeholder="id-number" class="w-100 mt-3 pl-2" id="id" name="id" required><br>
                <div class="d-flex justify-content-end mt-3">
                <button type="submit" class="pl-2 pr-2">Add</button>
                </div>
            </form>
         </section>
         </div>
+        </div>
+
+
+      <div id="contact" class="hide height">
+        
+        <div class="d-flex flex-column align-items-center">
+          <div>
+            <h2 class="text-primary">Contact information</h2>
+            <p>Do you have any questions or you just want to say “Hello”?</p>
+            <p>You can reach out to us!</p>
+          </div>
+
+          <div>
+            <div>
+              <h5>Abimbola Aminat Buari</h5><br>
+              <ul>
+                <li><a href="https://github.com/bimbolabuari">Github</a></li>
+                <li><a href="https://twitter.com/bimbolabuari">Twitter</a></li>
+                <li><a href="https://linkedin.com/in/bimbolabuari">LinkedIn</a></li>
+              </ul>
+            </div>
+
+            <div>
+              <h5>German Cobian</h5>
+              <ul>
+                <li><a href="https://github.com/German-Cobian">Github</a></li>
+                <li><a href="https://twitter.com/GermanCobian1">Twitter</a></li>
+                <li><a href="https://www.linkedin.com/in/german-cobian">LinkedIn</a></li>
+              </ul>
+            </div>
+          </div>
+        
+        </div>
+      </div>
+
+
+        <footer class="footer">
+          <div class="d-flex flex-row justify-content-start border-top align-items-center bg-dark">
+            <p class="pl-5 mt-2 text-white">Copyright: Abimbola Aminat Buari & German Cobian</p>
+          </div>
+        </footer>
+
         <script src="index.js"></script>
+        <script src="luxon.js"></script>
     </body>
     </html>
 

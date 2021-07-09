@@ -87,3 +87,30 @@ document.querySelector('#book-collection').addEventListener('click', (e) => {
   ShowBooks.deleteBook(e.target);
   Archive.removeBook(e.target.parentElement.previousElementSibling.textContent);
 });
+
+const navList = document.querySelector('.list');
+const navAddNew = document.querySelector('.add-new');
+const navContact = document.querySelector('.contact');
+
+const listSection = document.querySelector('#list');
+const AddNewSection = document.querySelector('#add-new');
+const contactSection = document.querySelector('#contact');
+
+listSection.classList.remove('hide');
+navList.addEventListener('click', () => {
+  listSection.classList.remove('hide');
+  AddNewSection.classList.add('hide');
+  contactSection.classList.add('hide');
+});
+
+navAddNew.addEventListener('click', () => {
+  listSection.classList.add('hide');
+  AddNewSection.classList.remove('hide');
+  contactSection.classList.add('hide');
+});
+
+navContact.addEventListener('click', () => {
+  listSection.classList.add('hide');
+  AddNewSection.classList.add('hide');
+  contactSection.classList.remove('hide');
+});
